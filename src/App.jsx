@@ -4,15 +4,18 @@ import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Blogs from "./pages/Blogs";
+import NoPage from "./pages/NoPage";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />} />
-        <Route index element={<Home />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="blogs" element={<Blogs />} />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="*" element={<NoPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
